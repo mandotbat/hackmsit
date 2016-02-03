@@ -1,0 +1,160 @@
+body {
+	background-image: url("../img/back.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ input {
+      border: 0;
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+      background: white	;
+      opacity: 1;
+     color: blue;
+     font-weight: bold;
+    }
+    textarea{
+	border: 0;
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+      background: white	;
+      opacity: 1;
+     color: blue;
+     font-weight: bold;
+    }
+    select {
+    border: 0;
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;	
+    }
+    input[type="submit"]{
+      background: red;
+      color: white;}
+       input[type="reset"]{
+      background: red;
+      color: white;}
+      input[type="file"]{
+      background: red;
+      color: white;
+  		}
+      
+  
+  @media (min-width: 950px){
+.left{
+	width: 50%;
+	height: 100%;
+	
+	position: relative;
+	opacity: 1;
+
+}
+.right{
+	position:absolute;
+	width: 50%;
+	height: 100%;
+	left:50%;
+	top: 0px;
+	opacity: 1;
+	border-left: 1px solid red;
+		
+}
+}
+
+
+.login{
+	height: 500px;
+	width: 25%px;
+	position: relative;
+	text-align: center;
+	background: blue;
+	
+	
+	margin-left: 50px;
+	margin-top : 100px;
+	margin-bottom: auto;
+	border-radius: 20px;
+	margin-right: 5%;
+}
+
+.register{
+	
+	height: 500px;
+	width: 25%px;
+	text-align: center;
+	background: blue;
+	
+	margin-right: 50px;
+	margin-left: 5%;
+	margin-top : 100px;
+	margin-bottom: auto;
+	border-radius: 20px;
+}
+@media (max-width: 700px){
+	.login{
+		height: 500px;
+		width: 90%px;
+	
+		text-align: center;
+		background: blue;
+		
+		padding-top: 20px;
+		margin-left: 50px;
+		margin-top : 100px;
+		margin-bottom: auto;
+		border-radius: 20px;
+		margin-right: 5%;
+	}
+
+	.register{
+	
+		height: 500px;
+		width: 90%px;
+	
+		text-align: center;
+		background: blue;
+		
+		padding-top: 20px;
+			margin-left: 50px;
+			margin-top : 100px;
+			margin-bottom: auto;
+			border-radius: 20px;
+			margin-right: 5%;
+	}
+}
+@media (max-width: 1250px){
+	.register{
+		height : 700px;
+	}
+	.login {
+		height : 700px;
+	}
+}
+@media (max-width: 488px){
+	.register{
+		height: 1000px;
+	}
+		input{
+		width: 80%;
+	}
+	select{
+		width:80%;
+	}
+	input[type="checkbox"]{
+     padding: 1px;
+      display: block;
+  }
+}
+
+
+
+.reg{
+	position: relative;
+	vertical-align: center;
+	top: 7px;
+	font-size: 20px;
+	color: red;
+}
