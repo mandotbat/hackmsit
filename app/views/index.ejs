@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FYIHunter || 2015</title>
+<title>HACKMSIT</title>
 <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <style>
 body{
 
@@ -17,8 +19,8 @@ background-size: cover;
 background-attachment: fixed;
 background-position: center;
 background-repeat: no-repeat;
-text-align: center;
 
+overflow-x:hidden;
 
 background-image: url("/img/back.jpg");
 
@@ -32,48 +34,49 @@ color:#FFFFFF;
 h2{
 color:#FFFFFF;
 }
-.container{
-    position: relative;
-    right:-25%;
-}
 
 </style>
 </head>
 
 <body>
-<div id="user">
+<!-- <div id="user">
  <% if ( user ) { %>
         <h2>Hello <%=user%> </h2>
         <a href="/logout">Logout</a>
     <% } else { %>
        
        
-        <!--<a href="/register">Register</a>
+        <a href="/register">Register</a>
         <a href="/login">Login</a>-
         <div class="container">
         
         <a href="/login"><button type="button" class="btn btn-primary" action="/login">Journalists</button></a>
         <a href="/login"><button type="button" class="btn btn-primary">Emergency</button></a>
         
-        </div>-->
+        </div>
     <% } %> 
     </div>
-<!--<a href="/register">Register</a>
+ --><!--<a href="/register">Register</a>
 <a href="/login">Login</a>-->
+<div class="float:left;top:10px"><h1>Paradar</h1></div>
+
+
 <div class="container">
-<h1>FYI hunter</h1>
+<div class="col-sm-6"></div>
+<div class="col-sm-6 wow pulse" >
 <form class="form-signin" action="/" method="post">
 <h2 class="form-signin-heading text-center">Register</h2>
 
 <label for="username" class="sr-only">Username</label>
 <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
 
-
 <label for="password" class="sr-only">Password</label>
 <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
 
+<br>
 <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
 </form>
+</div>
 
 </div>
 <!--<div class = "container">
@@ -82,5 +85,9 @@ color:#FFFFFF;
 <button type="button" class="btn btn-primary"><a href="Emergency/index.html">Emergency</a></button><button type="button" class="btn btn-primary"><a href="Report/index.html">Report</a></button>
 </div>
 </div>-->
+<script>
+              new WOW().init();
+     </script>
+
 </body>
 <!----></html>

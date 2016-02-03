@@ -8,6 +8,8 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -17,29 +19,34 @@
         margin: 0;
         padding: 0;
       }
+
+
       #map {
         height: 100%;
       }
+
     </style>
   </head>
-  <body>
+<body>
+<div id ="top1" class="wow bounceInUp" style="top:10px;right:10px;z-index:10000;position:absolute" >
 <div class="container">
-<h1>Form</h1>
+<div style="position:absolute;right:50px;">
 <form class="form-signin" action="/" method="post">
 
 <label for="hospitalName" class="sr-only">hospitalName</label>
-<input type="text" id="hospitalName" name="hospitalName" class="form-control" placeholder="hospital name" required autofocus>
+<input type="text" id="hospitalName" name="hospitalName" class="form-control" placeholder="Hospital Name" required autofocus>
 
 
 <label for="diseases" class="sr-only">diseases</label>
-<input type="text" name="diseases" id="diseases" class="form-control" placeholder="diseases" required>
+<input type="text" name="diseases" id="diseases" class="form-control" placeholder="Diseases" required>
 
 <button class="btn btn-lg btn-primary btn-block" type="submit" id="button" onclick="postData()">Submit</button>
 </form>
-
+</div>
+</div>
 </div>
 
-    <div id="map"></div>
+    <div id="map" ></div>
     <script>
 // Note: This example requires that you consent to location sharing when
 // prompted by your browser. If you see the error "The Geolocation service
@@ -117,5 +124,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJCAm9LFhZWSNNSCM5su65vn90sixZP1Q&signed_in=true&callback=initMap"
         async defer>
     </script>
+     <script>
+              new WOW().init();
+     </script>
   </body>
 </html>
