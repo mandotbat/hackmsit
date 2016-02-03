@@ -31,6 +31,8 @@ module.exports = function() {
 	require('../app/routes/users.server.routes.js')(app);
 	require('../app/routes/hospitalDB.server.routes.js')(app);
 	require('../app/routes/hospitalForm.server.routes.js')(app);
+	require('../app/routes/mapdata.server.routes.js')(app);
+	require('../app/routes/heatmap.server.routes.js')(app);
 	app.use(express.static('./public'));
 
 	return app;
