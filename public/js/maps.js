@@ -14,9 +14,12 @@ var beaches = [
             ["Janakpuri Nursing Home",28.6207947,77.0925366]
 ];
 
-var hmap = [];
+var disease = [ "STDs" , "Dengue" , "Malaria" , "Cholera" , "Chikunguniya" , "Swine Flu" ];
 
-$.getJSON("https://api.myjson.com/bins/z3ed", function(result){
+var hmap = [];
+var hmap2 = [];
+
+$.getJSON("https://api.myjson.com/bins/2y1et", function(result){
             $.each(result, function(j, field){
                   hmap.push(new google.maps.LatLng(field["latitude"],field["longitude"]));
                 });
@@ -26,13 +29,12 @@ $.getJSON("https://api.myjson.com/bins/z3ed", function(result){
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
-    center: {lat: 28.5, lng: 77.42},
-    mapTypeId: google.maps.MapTypeId.SATELLITE
+    center: {lat: 28.5, lng: 77.42}
   });
 
 
   heatmap = new google.maps.visualization.HeatmapLayer({
-    data: getPoints(),
+    data: getPoints(hmap),
     map: map
       });
 
@@ -53,7 +55,7 @@ function initMap() {
     anchor: new google.maps.Point(15, 15)
   };
 
-          for(var i=0;i<beaches.length;i++)                      
+          for(var i=0;i<beaches.length;i++)                     
             {    
                 var beach = beaches[i];
                 var marker = new google.maps.Marker({
@@ -72,12 +74,12 @@ function initMap() {
                     if(map.getZoom()>=11)
                     {
                         heatmap.setMap(map);
-                        clearMarkers();
+                        // clearMarkers();
                     }
                     else
                     {
                         heatmap.setMap(null);
-                        showMarkers();
+                        // showMarkers();
                     }
                 });
         }
@@ -131,6 +133,40 @@ function changeOpacity() {
 }
 
 // Heatmap data: 500 Points
-function getPoints() {
+function getPoints(hmap) {
   return hmap;
 }
+/*
+function findPoints(disease)
+{
+  $.getJSON("https://api.myjson.com/bins/5376t", function(result){
+            $.each(result, function(j, field){
+                  hmap.push(new google.maps.LatLng(field["latitude"],field["longitude"]));
+                });
+            });
+}
+
+function diseaseWise() {
+  var disease1 = prompt("Disease: ", "");
+  for(var i=0;i<disease.length;i++)
+  { 
+    if(disease1=="all")
+    {
+      heatmap.setMap(null);
+      hmap2=hmap;
+      heatmap.setData(hmap2);
+      heatmap.setMap(map);
+      heatmap.set('gradient',null);
+    }
+    if(disease[i]==disease1)
+    {
+      heatmap.setMap(null);
+      hmap2=findPoints(disease1);
+      heatmap.setData(hmap2);
+      heatmap.setMap(map);
+      heatmap.set('gradient',null);
+      changeGradient();
+      break;
+    }
+  }
+}*/
