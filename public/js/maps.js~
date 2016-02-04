@@ -21,13 +21,20 @@ function initMap() {
     else
         heatmap.setMap(null);
 
-  var beaches = [
-  ['Bondi Beach', 37.890542, -122.274856],
-  ['Coogee Beach', 37.923036, -122.259052],
-  ['Cronulla Beach', 37.028249, -122.157507],
-  ['Manly Beach', 37.80010128657071, -122.28747820854187],
-  ['Maroubra Beach', 37.950198, -122.259302]
-    ];  
+  var beaches = [];  
+
+        $.getJSON("https://api.myjson.com/bins/1pcm5", function(result){
+            $.each(result, function(i, field){
+                  var geom = field["geometry"];
+                  var coord = geom['coordinates'];                
+                  var temp = [
+                           field["hospitalName"],
+                           coord[0],
+                           coord[1]
+                           ];
+                  beaches.push(temp);
+            });
+        });
 
   var image = {
     url: 'h.png',

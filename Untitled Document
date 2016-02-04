@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+var beaches = [];
+var points = [];
+$(document).ready(function(){
+    $("button").click(function(){
+        $.getJSON("https://api.myjson.com/bins/1pcm5", function(result){
+            $.each(result, function(i, field){
+                  var geom = field["geometry"];
+                  var coord = geom['coordinates'];                
+                  var temp = [
+                           field["hospitalName"],
+                           coord[0],
+                           coord[1]
+                           ];
+                  beaches.push(temp);
+            });
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Get JSON data</button>
+
+<div></div>
+
+</body>
+</html>
+
